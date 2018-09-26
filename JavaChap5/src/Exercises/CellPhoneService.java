@@ -20,9 +20,23 @@ public class CellPhoneService {
 		dataUsage = input.nextInt();
 		
 		if(minutes < 500 && textMessages == 0 && dataUsage == 0) {
-			result = "You need plan a Which is $49 a month";
+			result = "You need plan A Which is $49 a month";
 		}
-		else if()
+		else if(minutes < 500 && textMessages > 0) {
+			result = "You need Plan B at $55 a month";
+		}
+		else if(minutes > 500 && textMessages < 100) {
+			result = "You need plan C at $61 a month";
+		}
+		else if(minutes > 500 && textMessages > 100) {
+			result = "You need plan D at $70 a month";
+		}
+		else if(minutes > 0 && textMessages > 0 && dataUsage <= 2) {
+			result = "You need plan E at $79 a month";
+		}
+		else if(minutes > 0 && textMessages > 0 && dataUsage > 2) {
+			result = "You need plan F at $87 a month";
+		}
 		
 		showResult(result);
 	}
